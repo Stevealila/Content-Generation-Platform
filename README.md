@@ -50,6 +50,8 @@ This platform allows users to register, log in, generate API keys, and log out. 
       go get -u github.com/gin-contrib/sessions/cookie
       go get -u github.com/google/uuid
       go get -u github.com/joho/godotenv
+      go get github.com/google/generative-ai-go
+      go mod tidy
       ```
 
    2. **Create and configure `.env` file:**
