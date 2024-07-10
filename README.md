@@ -51,6 +51,7 @@ This platform allows users to register, log in, generate API keys, and log out. 
       go get -u github.com/google/uuid
       go get -u github.com/joho/godotenv
       go get github.com/google/generative-ai-go
+      go get github.com/gin-contrib/cors
       go mod tidy
       ```
 
