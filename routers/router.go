@@ -18,7 +18,7 @@ func SetupRouter(r *gin.Engine) {
 		api.GET("/keys", middleware.AuthRequired(), controllers.GetAPIKeys)
 		api.DELETE("/keys/:id", middleware.AuthRequired(), controllers.DeleteAPIKey)
 
-		api.POST("/content", middleware.AuthRequired(), controllers.GenerateContent)
+		api.POST("/content", middleware.APIKeyAuthRequired(), controllers.GenerateContent)
 		api.GET("/content", middleware.AuthRequired(), controllers.GetUserContents)
 		api.GET("/content/:id", middleware.AuthRequired(), controllers.GetContent)
 		api.DELETE("/content/:id", middleware.AuthRequired(), controllers.DeleteContent)

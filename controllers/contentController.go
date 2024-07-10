@@ -13,7 +13,7 @@ import (
 )
 
 func GenerateContent(c *gin.Context) {
-	userID := c.MustGet("user_id").(uint)
+	apiKey := c.MustGet("apiKey").(models.APIKey)
 
 	var input struct {
 		Question string `json:"question" binding:"required"`
@@ -51,7 +51,7 @@ func GenerateContent(c *gin.Context) {
 	content := models.Content{
 		Title:  input.Question,
 		Body:   string(generatedContent),
-		UserID: userID,
+		UserID: apiKey.UserID,
 	}
 
 	if err := config.DB.Create(&content).Error; err != nil {
